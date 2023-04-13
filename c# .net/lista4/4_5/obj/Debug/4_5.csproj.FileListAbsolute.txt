@@ -1,0 +1,8 @@
+C:\Users\dominik\source\repos\lista4\4_5\bin\Debug\4_5.exe.config
+C:\Users\dominik\source\repos\lista4\4_5\bin\Debug\4_5.exe
+C:\Users\dominik\source\repos\lista4\4_5\bin\Debug\4_5.pdb
+C:\Users\dominik\source\repos\lista4\4_5\obj\Debug\4_5.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\lista4\4_5\obj\Debug\4_5.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\lista4\4_5\obj\Debug\4_5.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\lista4\4_5\obj\Debug\4_5.exe
+C:\Users\dominik\source\repos\lista4\4_5\obj\Debug\4_5.pdb
