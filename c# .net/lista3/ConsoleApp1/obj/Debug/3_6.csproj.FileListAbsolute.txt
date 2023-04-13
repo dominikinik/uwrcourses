@@ -1,0 +1,8 @@
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\obj\Debug\3_6.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\obj\Debug\3_6.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\obj\Debug\3_6.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\dominik\source\repos\lista3\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

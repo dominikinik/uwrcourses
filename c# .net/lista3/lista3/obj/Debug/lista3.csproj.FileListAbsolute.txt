@@ -1,0 +1,8 @@
+C:\Users\dominik\source\repos\lista3\lista3\obj\Debug\lista3.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\lista3\lista3\obj\Debug\lista3.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\lista3\lista3\obj\Debug\lista3.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\lista3\lista3\bin\Debug\lista3.exe.config
+C:\Users\dominik\source\repos\lista3\lista3\bin\Debug\lista3.exe
+C:\Users\dominik\source\repos\lista3\lista3\bin\Debug\lista3.pdb
+C:\Users\dominik\source\repos\lista3\lista3\obj\Debug\lista3.exe
+C:\Users\dominik\source\repos\lista3\lista3\obj\Debug\lista3.pdb
