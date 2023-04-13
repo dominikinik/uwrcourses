@@ -1,0 +1,8 @@
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\bin\Debug\zadanie2.6.exe.config
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\bin\Debug\zadanie2.6.exe
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\bin\Debug\zadanie2.6.pdb
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\obj\Debug\zadanie2.6.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\obj\Debug\zadanie2.6.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\obj\Debug\zadanie2.6.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\obj\Debug\zadanie2.6.exe
+C:\Users\dominik\source\repos\lista2_1\zadanie2.6\obj\Debug\zadanie2.6.pdb
