@@ -1,0 +1,8 @@
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\bin\Debug\POzadanie2lissta4.exe.config
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\bin\Debug\POzadanie2lissta4.exe
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\bin\Debug\POzadanie2lissta4.pdb
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\obj\Debug\POzadanie2lissta4.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\obj\Debug\POzadanie2lissta4.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\obj\Debug\POzadanie2lissta4.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\obj\Debug\POzadanie2lissta4.exe
+C:\Users\dominik\source\repos\POzadanie2lissta4\POzadanie2lissta4\obj\Debug\POzadanie2lissta4.pdb

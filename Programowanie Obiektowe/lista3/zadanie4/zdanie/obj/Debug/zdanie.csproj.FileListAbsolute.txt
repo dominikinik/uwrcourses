@@ -1,0 +1,15 @@
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.csproj.AssemblyReference.cache
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.csproj.CoreCompileInputs.cache
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\zdanie.exe.config
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\zdanie.exe
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\zdanie.pdb
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\ClassLibrary1.dll
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\ClassLibrary1.pdb
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.csproj.CopyComplete
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.exe
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.pdb
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\zdanie.exe.manifest
+C:\Users\dominik\source\repos\zdanie\zdanie\bin\Debug\zdanie.application
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.exe.manifest
+C:\Users\dominik\source\repos\zdanie\zdanie\obj\Debug\zdanie.application
