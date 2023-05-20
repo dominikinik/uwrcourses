@@ -1,142 +1,76 @@
-import queue
-import heapq
 
-VISITED = set()
-
-
-def load():
-    goals = set()
-    walls = set()
-    player_pos = []
-    file = open("zad_input.txt ")
-    lines = file.readlines()
-    i = 0
-    for y in lines:
-        j = 0
-        for x in y:
-            if x == 'S':
-                player_pos.append((i, j))
-            elif x == '#':
-                walls.add((i, j))
-            elif x == 'G':
-                goals.add((i, j))
-            elif x == 'B':
-                goals.add((i, j))
-                player_pos.append((i, j))
-            j += 1
-        i += 1
-    x, y = j, i
-    moves = ''
-    return player_pos, goals, walls, x-1, y, moves
+def B(i, j):
+    return 'B_%d_%d' % (i, j)
 
 
-def finito(state):
-    player_pos = state[0]
-    goals = state[1]
-    for pos in player_pos:
-        if pos not in goals:
-            return False
-    return True
-
-
-def merge(state):
-    player_pos = state[0]
-    sorted_pos = sorted(player_pos) 
-    for i in range(len(sorted_pos) - 1):
-        if sorted_pos[i] == sorted_pos[i + 1]:
-            player_pos.remove(sorted_pos[i]) 
-            
-
-def new_poss(state):
-    walls = state[2]
-    odp = []
-    for i in range(4):  
-        player_pos = []
-        moves = state[5]
-        for k in state[0]:
-            new_pos = (k[0]+x_mof[i], k[1] + y_mof[i])
-        
-            if new_pos not in walls:
-                player_pos.append(new_pos)
-            else:
-                player_pos.append(k)
-        moves+=mofes[i]
-
-        player_pos = sorted(player_pos)
-        new_state = [player_pos, state[1], state[2], state[3], state[4], moves]
-        if tuple(player_pos) not in VISITED:
-            VISITED.add(tuple(player_pos))
-            odp.append(new_state)
-
-    return odp
-
-
-def pom_bfs(state, s_pos):
-    goals = state[1]
-    walls = state[2]
-    Q = queue.Queue()
-    Q.put((s_pos, 0))
-    visited = [s_pos]
-    DISTANCES[s_pos] = 123123
-
-    while not Q.empty():
-        current = Q.get()
-        pos = current[0]
-        dist = current[1]
-        if pos in goals:
-            DISTANCES[s_pos] = min(DISTANCES[s_pos], dist)
-
-        for i in range(4): 
-            new_pos = (pos[0]+x_mof[i], pos[1] + y_mof[i])
-        
-            if new_pos not in visited and new_pos not in walls:
-                visited.append(new_pos)
-                Q.put((new_pos, dist + 1))
-
-
-def dist(state):
-    x = state[3]
-    y = state[4]
-    walls = state[2]
-    for i in range(y):
-        for j in range(x):
-            if (i, j) not in walls:
-                pom_bfs(state, (i, j))
-
-
-def heur(state):
-    dist = [DISTANCES[pos] for pos in state[0]]
-    return len(state[5]) + max(dist) 
-
-def save(moves):
-    output = open("zad_output.txt", "w")
-    output.write(moves)
-    output.close()
+def storms(rows, cols, triples):
+    writeln(':- use_module(library(clpfd)).')
     
-def STAR(state):
-    Q = []  
-    heapq.heappush(Q, (heur(state), state))
-    VISITED.add(tuple(state[0]))
+    R = len(rows)
+    C = len(cols)
+    
+    bs = [B(i, j) for i in range(R) for j in range(C)]
+    
+    writeln('solve([' + ', '.join(bs) + ']) :- ')
+    writeln('[' + ', '.join(bs) + '] ins 0..1,') #deklaracja zmiennych
 
-    while len(Q) > 0:
-        st_from_Q = heapq.heappop(Q)[1]
-        merge(st_from_Q)
-       
-        new_states = new_poss(st_from_Q)
-        for s in new_states:
-            if finito(s):
-                save(s[5])
-                return s
-            else:
-                heapq.heappush(Q, (heur(s), s))
+    # sumowanie
+    for c, val in enumerate(rows):
+        rs = [B(c, j) for j in range(C)]
+        writeln('sum([' + ', '.join(rs) + '], #=, ' + str(val) + '), ')
+
+    
+    for c, val in enumerate(cols):
+        cs = [B(j, c) for j in range(R)]
+        writeln('sum([' + ', '.join(cs) + '], #=, ' + str(val) + '), ')
+
+    # kwadrat
+    for i in range(R - 1):
+        for j in range(C - 1):
+            A = B(i, j)
+            B1 = B(i, j+1)
+            C1 = B(i + 1, j)
+            D = B(i + 1, j + 1)
+            writeln(A + ' + ' + D + ' #= 2 #<==> ' + B1 + ' + ' + C1 + ' #= 2, ')
+
+    # B = 1 => A + C > 1  z wykladu dla kolumny i rzedow 
+    for i in range(R):
+        for j in range(C - 2):
+            A = B(i, j)
+            B1 = B(i, j + 1)
+            C1 = B(i, j + 2)
+            writeln(B1 + ' #= 1 #==> ' + A + ' + ' + C1 + ' #>= 1, ')
+
+    for i in range(C):
+        for j in range(R - 2):
+            A = B(i, j)
+            B1 = B(i, j + 1)
+            C1 = B(i, j + 2)
+            writeln(B1 + ' #= 1 #==> ' + A + ' + ' + C1 + ' #>= 1, ')
+    # znane wartosci
+    for triple in triples:
+        output.write('%s #= %d, ' % (B(triple[0], triple[1]), triple[2]))
+
+    writeln('')
+    writeln('    labeling([ff], [' + ', '.join(bs) + ']).')
+    writeln('')
+    writeln(':- solve(X), write(X), nl.')
+    
 
 
+def writeln(s):
+    output.write(s + '\n')
 
-DISTANCES = {}
-mofes = ['R', 'L', 'D', 'U']
-x_mof =[0, 0, 1, -1]    
-y_mof = [1, -1, 0, 0]   
-s = load()
-dist(s)
-STAR(s)
+txt = open('zad_input.txt').readlines()
+output = open('zad_output.txt', 'w')
 
+rows = list(map(int, txt[0].split()))
+cols = list(map(int, txt[1].split()))
+triples = []
+
+for i in range(2, len(txt)):
+    if txt[i].strip():
+        triples.append(list (map(int, txt[i].split())))
+
+
+storms(rows, cols, triples)
