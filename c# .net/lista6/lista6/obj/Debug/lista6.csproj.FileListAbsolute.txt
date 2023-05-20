@@ -1,0 +1,12 @@
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\bin\Debug\lista6.exe.config
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\bin\Debug\lista6.exe
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\bin\Debug\lista6.pdb
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.csproj.AssemblyReference.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.Properties.Resources.resources
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.csproj.GenerateResource.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.csproj.CoreCompileInputs.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.exe
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.pdb
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.mainform.resources
+C:\Users\dominik\Desktop\na gita\c# .net\lista6\lista6\obj\Debug\lista6.childform.resources
