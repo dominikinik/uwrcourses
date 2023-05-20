@@ -1,0 +1,6 @@
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.csproj.AssemblyReference.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.Form1.resources
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.Properties.Resources.resources
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.csproj.GenerateResource.cache
+C:\Users\dominik\Desktop\na gita\c# .net\lista7\lista7\obj\Debug\lista7.csproj.CoreCompileInputs.cache
