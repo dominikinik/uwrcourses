@@ -1,0 +1,2 @@
+Reversi agent for playing against random agent opponent with an accuracy of ~99% 
+and a time limit of 300s/1000 games (on my slow computer :) ).
