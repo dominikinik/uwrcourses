@@ -1,0 +1,15 @@
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\FormClient.exe.config
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\FormClient.exe
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\FormClient.pdb
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\Chess.dll
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\Chess.pdb
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.csproj.AssemblyReference.cache
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.Form1.resources
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.Properties.Resources.resources
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.csproj.GenerateResource.cache
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.csproj.CoreCompileInputs.cache
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.csproj.CopyComplete
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.exe
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\obj\Debug\FormClient.pdb
+C:\Users\dominik\Desktop\CSharpChess-master\FormClient\bin\Debug\Chess.xml

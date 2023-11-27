@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Chess</name>
+    </assembly>
+    <members>
+        <member name="F:Chess.OptionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Chess.OptionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Chess.OptionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Chess.ChessBoard.ActionPiece(Chess.Point,Chess.Point,System.Boolean)">
+            <summary>
+            Move a peice from one location on the board to another.
+            </summary>
+            <param name="from">The location of the piece that is moving.</param>
+            <param name="to">The location to move to.</param>
+            <returns>Returns true on success or false on failure.</returns>
+        </member>
+    </members>
+</doc>
