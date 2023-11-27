@@ -1,0 +1,16 @@
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\bin\Release\Chess.dll
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\bin\Release\Chess.pdb
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.csproj.AssemblyReference.cache
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.OptionForm.resources
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.csproj.GenerateResource.cache
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.csproj.CoreCompileInputs.cache
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.dll
+C:\Users\dominik\Desktop\CSharpChess-master\Chess\obj\Release\Chess.pdb
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\bin\Release\Chess.dll
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\bin\Release\Chess.pdb
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.csproj.AssemblyReference.cache
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.OptionForm.resources
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.csproj.GenerateResource.cache
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.csproj.CoreCompileInputs.cache
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.dll
+C:\Users\dominik\Desktop\CHESSPBOARDGAME\Chess\obj\Release\Chess.pdb
