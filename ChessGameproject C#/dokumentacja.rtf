@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Cascadia Mono;}{\f2\fnil\fcharset238 Calibri;}{\f3\fnil\fcharset0 Cascadia Mono;}{\f4\fnil\fcharset238 Cascadia Mono;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red43\green145\blue175;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Dokumentacja gry planszowej szachy  DOMINIK OLEJARZ\par
+Projekt dzieli sie na 2 glowne segmenty:\par
+\tab 1.Chess - Odpowiada za zasady gry  oraz obsluge ruchow \par
+\tab 2.MainForm - Odpowiada za glowne Forms ktory wizualizuje plansze szachownicy \par
+1. Chess\par
+1.1 ChessBoard - glowna klasa segmentu Chess:\par
+\tab Pola: \par
+\tab       boardArray - tablica zawierajaca informacje o grze \par
+\tab       Columns, Rows - stale zawierajac rozmiary planszy \par
+\tab Wlasciwosci:\par
+\tab       Mat - zmienna sledzaca czy mamy mata na szachownicy \par
+\tab       Turn- zmienna sledzaca jaki gracz ma teraz ruch\par
+\tab Metody:\par
+\tab       \cf1\f1\fs19 SetupBoard()\cf0\f0\fs22 - inicjator ChessBoard \par
+\tab\tab zwraca - obiekt ChessBoard ze standardowym poczatkowym ustawieniem gry \tab\tab\tab\tab w szachy\par
+
+\pard\ri-164\sa200\sl276\slmult1\tab       \f2\lang1045 Posible\cf1\f1\fs19\lang9 PieceActions(\cf2 int\cf1  x, \cf2 int\cf1  y, \cf2 bool\cf1  ignoreCheck = \cf2 false\cf1 , \cf2 bool\cf1  \f3\lang1033\tab\tab\tab\f1\lang9 attackActions = \cf2 true\cf1 , \cf2 bool\cf1  moveActions = \cf2 true\cf1 , \f4\lang1045    \tab\tab\tab\tab\f1\lang9 ChessPiece[,]boardArray = \cf2 null\cf1 )\f3\lang1033  - \f0\fs22 funkcja ktora generuje \f2\lang1045\tab\tab\tab\tab\f0\lang1033 mozliwe ruchy dla danego piona  majac na uwadze reguly gry.\par
+
+\pard\sa200\sl276\slmult1\tab            Zwraca - zwraca \f1\fs19 IEnumerable<Point>\f3  \f1 availableActions\f3  \f0\fs22 ktore \tab\tab\tab\tab\tab reprezentuje mozliwe ruchy danej figury.\par
+\tab        \f1\fs19 AddMove(List<Point> availableActions, Point fromPoint, Point \f3\tab\tab\tab\tab\f1 toPoint, \cf2 bool\cf1  ignoreCheck = \cf2 false\cf1 )\f3 - \f0\fs22 funkcja void \tab\tab\tab\tab\tab pomocnicza  \cf0\f2\lang1045 Posible\cf1\f1\fs19\lang9 PieceActions(\f3\lang1033 ..) ,\f0\fs22 funkcja ktora sprawdza \tab\tab\tab\tab\tab poprawmosc ruchu \f1\fs19 fromPoint\f3  do\f1  toPoint\f0\fs22  oraz dodaje do \tab\tab\tab\tab\tab\f1\fs19 availableActions\f3  \par
+\tab    \f4\lang1045 Make\f1\lang1033 PieceAction(Point from, Point to, \cf2 bool\cf1  bypassValidaiton = \f3\tab\tab\tab\tab\cf2\f1 false\cf1 )\f3  -\f0\fs22 danej funkcja wykonujaca ruchy   z \f1\fs19 from\f3  do \f1 to\f3  \f0\fs22 sprawdza \tab\tab\tab\tab ona tez czy jest dodatkowe warunki gry np. mat,szach \tab\tab\tab\tab\tab\tab roszada,podwojny skok piona nastepnie propaguje ten ruch. Oraz \tab\tab\tab\tab zmienia Turn jak i Promuje piony ktore doszly do konca planszy.\par
+\tab\tab Zwraca - True jesli ruch zostal wykonany i False wpp.\par
+     \tab        \f1\fs19 CanPromote(ChessPiece movingPeice,\cf2 int\cf1  x,\cf2 int\cf1  y)\f3  \f0\fs22 wpp- funkcja \tab\tab\tab pomocnicza \f4\fs19\lang1045 Make\f1\lang1033 PieceAction\f3 (..) \f0\fs22  ,ktora sprawdza czy pion moze byc \tab\tab\tab promowany do innej figury \par
+\tab\tab Zwraca - True jesli pion spelnia warunki promocji i False wpp.\f1\fs19\par
+\f3\tab    \f1 Promotion(\cf2 int\cf1  Turn,Point to,\cf2 string\cf1  Option)\f3  \f0\fs22 funkcja void\tab\tab\tab\tab\tab pomocnicza \f4\fs19\lang1045 Make\f1\lang1033 PieceAction\f3 (..) \f0\fs22 w ,ktora propaguje piona przez \tab\tab\tab\tab wywolanie  OptionalForm ktora jest interfejsem uzytkownika ktory \tab\tab\tab\tab przedstawia mozliwe zamiany piona w inne figury pobiera wybor i \tab\tab\tab\tab aktualizuje plansze.\f3\fs19\par
+\tab   \f1 KingInCheck(\cf2 int\cf1  player)\f3  \f0\fs22 - funkcja pomocnicza \f4\fs19\lang1045 Make\f1\lang1033 PieceAction\f3 (..) \f0\fs22  \tab\tab\tab\tab ktora sprawdza czy krol player'a jest szachowany.\par
+\tab        \tab Zwraca - True jesli jest szach  i False wpp.\f1\fs19\par
+\f3\tab   \f1 Isdraw()\f0\fs22 - funkcja pomocnicza \f4\fs19\lang1045 Make\f1\lang1033 PieceAction\f3 (..) \f0\fs22  \tab\tab\tab\tab\tab\tab\tab ktora sprawdza czy mamy na szachownicy niewystarczajacy material, a \tab\tab\tab co za tym idzie remis \par
+\tab        \tab Zwraca - True jesli jest remis  i False wpp\f1\fs19\par
+\f3         \f1 CheckSquareVulnerable(\cf2 int\cf1  squareX, \cf2 int\cf1  squareY, \cf2 int\cf1  player, \f3\tab\tab\tab\tab\f1 ChessPiece[,] boardArray = \cf2 null\cf1 )\f3  \f0\fs22 wpp- funckja pomocnicza  \tab\tab\tab\tab\f1\fs19 KingInCheck(\cf2 int\cf1  player)\f3  \f0\fs22 ktora sprawdza  czy pole krola jest \tab\tab\tab\tab atakowane\par
+\tab\tab Zwraca - True jesli jest atakowane  i False wpp.\f1\fs19\par
+\f3\tab   \f1 IsCheckmate(\cf2 int\cf1  player)\f0\fs22 Z - funkcja sprawdza czy mamy do czynienia z matem \tab\tab\tab\tab na szachownicy \f3\fs19\tab\par
+\f0\fs22\tab\tab Zwraca - True jesli jest mat  i False wpp.\f1\fs19\par
+\f3\tab   \f0\fs22 Poboczne metody ktore sprawdzaja zasiegi mozliwych ruchow:\f1\par
+\f3\fs19\tab   \tab\f1 ValidateRange(\cf2 int\cf1  value, \cf2 int\cf1  high, \cf2 int\cf1  low = -1)\par
+\f3\tab   \tab\f1 ValidateX(\cf2 int\cf1  value)\par
+\cf0\f0\fs22\lang9\tab     \tab  \cf1\f1\fs19 ValidateY(\cf2 int\cf1  value)\par
+\f3\lang1033\tab   \tab\f1 ValidatePoint(Point point)\cf0\f0\fs22\lang9\tab\par
+1.2 ChessPiece- classa obslugujaca generacje ruchow:\par
+\tab  Pola: \par
+\tab          \cf1\f1\fs19 MAX_DISTANCE = 7\f3\lang1033  - \f0\fs22 stala rozmiaru planszy\f1\fs19\lang9\par
+        \f3\lang1033  \f1\lang9 canEnPassantLeft\f3\lang1033  \f0\fs22 - czy mozna bic w przelocie w lewo\f1\fs19\lang9\par
+        \f3\lang1033  \f1\lang9 canEnPassantRight\f3\lang1033 - \f0\fs22 czy moze bic w przelocie w prawo\f1\fs19\lang9\par
+       \f3\lang1033   \f1\lang9 canDoubleJump\f3\lang1033 - \f0\fs22 czy moze zrobic double jump \par
+   \tab        \f1\fs19\lang9 canCastle\f3\lang1033  - \f0\fs22 czy mozne zrobic roszade\par
+\f1\fs19\lang9\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\tab       \cf1\f1\fs19 availableMoves\cf0\f0\fs22 - mozliwe ruchy jako zmienna \cf1\f1\fs19 Point[][]\cf0\f0\fs22\par
+\tab       \cf1\f1\fs19 availableAttacks\cf0\f0\fs22 - mozliwe ataki jako \cf1\f1\fs19 Point[][]\par
+\f3\lang1033\tab\cf0\f0\fs22\lang9 Metody:\cf1\f1\fs19\lang1033\par
+\f3         \f1 GetMovementArray(\cf2 int\cf1  distance, Direction direction)\f3  - \f0\fs22 funkcja \tab\tab\tab\tab generuje ruchy w pionie i poziomie \par
+\tab\tab Zwraca - \f1\fs19  Point[]\f0\fs22 True czyli tablice ruchow pionowych i poziomych .\f1\fs19\par
+\f3         \f1 GetDiagnalMovementArray(\cf2 int\cf1  distance, DiagnalDirection \f3\tab\tab\tab\tab\tab\f1 direction)\f3  - \f0\fs22 funkcja generuje ruchy po wszystkich \tab\tab\tab\tab\tab diagonalach\par
+\tab\tab Zwraca - \f1\fs19 Point[]\f0\fs22 True czyli tablice ruchow diagonalnych. \f1\fs19\par
+\cf0\f0\fs22\lang9 1.3 CastlePiece- classa dziedziczaca po CHessPiece :\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\tab       \cf1\f1\fs19 CanCastle\cf0\f0\fs22 -  bool posiadajacy informacje czy moze zrobic roszade czy nie.\par
+1.4 Structs- classa ze strunkturami:\par
+\cf1\f3\fs19\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\tab       \cf3\f1\fs19 Point\cf0\f0\fs22 - reprezentuje punkt na szachownicy\par
+\tab       \cf3\f1\fs19 Direction\cf0\f0\fs22 - enum ktory przechowuje kierunki pionowe i poziome\par
+\cf1\f3\fs19\lang1033\tab   \cf3\f1 DiagnalDirection\f3  \cf0\f0\fs22\lang9 - enum ktory przechowuje kierunki diagonalne\cf1\f1\fs19\par
+\cf0\f0\fs22 1.5.1Pieces.Bishop- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\f1\fs19\lang9\par
+\f3\lang1033\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\cf0\lang9 1.5.2 Pieces.King- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\par
+\tab       \f1\fs19\lang9 canCastle\f3\lang1033 - \f0\fs22 czy moze robic roszade\f1\fs19\lang9\par
+\f3\lang1033\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\cf0\lang9 1.5.3 Pieces.Knight- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\par
+\f3\fs19\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\cf0\lang9 1.5.4 Pieces.Pawn- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\par
+\tab       \f1\fs19\lang9 canDoubleJump\f3\lang1033 - \f0\fs22 czy moze robic double jump\par
+\tab       \f1\fs19\lang9 canEnPassantLeft\f3\lang1033 - \f0\fs22 czy moze bic w przelocie lewo\par
+\tab       \f1\fs19\lang9 canEnPassantRight\f3\lang1033 - \f0\fs22 czy moze bic w przelocie prawo\f1\fs19\lang9\par
+\f3\lang1033\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\cf0\lang9 1.5.5 Pieces.Queen- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\par
+\f3\fs19\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\cf0\lang9 1.5.6 Pieces.Rook- classa reprezentujaca gonca:\cf1\f1\fs19\par
+\f3\lang1033       \cf0\f0\fs22\lang9 Wlasciwosci:\par
+\cf1\lang1033\tab        \f1\fs19\lang9 Player\f3\lang1033 - \f0\fs22 do jakiego gracza nalezy pion\par
+\tab       \f1\fs19\lang9 canCastle\f3\lang1033 - \f0\fs22 czy moze robic roszady\par
+\f3\fs19\tab\cf0\f0\fs22\lang9 Metody:\par
+\tab      \cf1\f1\fs19 CalculateMoves()\f3\lang1033 - \f0\fs22 zwraca ChessPiece z policzonymi ruchami ktore moze \tab\tab\tab\tab\tab wykonac figura bedaca podmiotem klasy \par
+\par
+\cf0\lang9 1.6 OptionalForm- classa dziedziczaca po forms ktora wyswietlana jest gdy pion jest \tab\tab promowany i daje wybor na jaka figure jest zamykany\par
+2. MainForm\par
+\tab 2.1 Form1 - classa dziedziczaca po forms ktora wyswietla glowna interfejs \tab\tab\tab\tab uzytkownika interpretuje sytuacje na planszy dodaje edycje planszy  \tab\tab\tab\tab (podkresla mozliwe kratki na ktore mozna przesunac piona). Daje mozliwosc \tab\tab\tab resetowania gry za pomoca przycisku(restart)\cf1\lang1033\par
+\tab        Metody:\par
+\tab\tab\f1\fs19 Form_Load(\cf2 object\cf1  sender, EventArgs e)\f3  \f0\fs22 -metoda void ktora rysuje \tab\tab\tab\tab\tab\tab\tab plansze \f1\fs19\par
+\f3\tab\tab\f1 Click_Board(\cf2 object\cf1  s, EventArgs e)\f0\fs22 -metoda ktora obsluguje \tab\tab\tab\tab\tab\tab klikniecia na plansze  \f1\fs19\par
+\f3\tab\tab\f1 DrawPieces(ChessBoard board)\f0\fs22 -metoda ktora rysuje pozycje w pozycje \tab\tab\tab\tab w oparciu o aktualna sytuacje na planszy \f1\fs19 ChessBoard board\f0\fs22  \par
+\f1\fs19\par
+\par
+\f3\tab\f1\par
+\par
+\cf0\f0\fs22\lang9\par
+\cf1\f1\fs19\par
+\par
+       \par
+        \cf0\f0\fs22\par
+\par
+}
+ 
