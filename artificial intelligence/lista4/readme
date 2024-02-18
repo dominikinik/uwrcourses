@@ -1,2 +1,1 @@
--Chess was written using MinMax alg with alpha beta pruning as well as JungleAgent and Reversi(zadanie1 file)
--reversi_MCTS was written using Monte Carlo Tree Search 
+This project comprises several implementations of board game agents. For instance, Chess utilizes the MinMax algorithm with alpha-beta pruning, alongside JungleAgent and Reversi. Moreover, Reversi boasts an additional implementation employing Monte Carlo Tree Search. Each of these implementations has demonstrated promising results both in internal competitions and on the CodinGame website
